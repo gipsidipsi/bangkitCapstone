@@ -12,7 +12,7 @@ export const getUsers = async(req, res) => {
         console.log(error);
     }
 }
-
+//need user to register  their acount so it'll be able to encrypt their password
 export const Register = async(req, res) => {
     const { name, email, password, confPassword } = req.body;
     if(password !== confPassword) return res.status(400).json({msg: "Password dan Confirm Password tidak cocok"});
