@@ -3,7 +3,7 @@ version: '3'
 services:
   db:
     image: mysql:5.7
-    container_name: db
+    container_name: db2
     environment:
       MYSQL_ROOT_PASSWORD: my_secret_password
       MYSQL_DATABASE: app_db
