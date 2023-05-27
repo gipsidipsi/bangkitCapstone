@@ -26,6 +26,7 @@ export const Register = async (req, res) => {
         });
         res.json({ msg: "Register Berhasil" });
     } catch (error) {
+        console.log(error.name)
         if (error.name === "SequelizeUniqueConstraintError") {
             return res.status(400).json({ msg: "Alamat email sudah ada yang menggunakan" })
         } else {
@@ -47,10 +48,10 @@ export const Login = async (req, res) => {
         const name = user[0].name;
         const email = user[0].email;
         const accessToken = jwt.sign({ userId, name, email }, process.env.ACCESS_TOKEN_SECRET, {
-            expiresIn: '1d'
+            expiresIn: '1h'
         });
         const refreshToken = jwt.sign({ userId, name, email }, process.env.REFRESH_TOKEN_SECRET, {
-            expiresIn: '1d'
+            expiresIn: '1h'
         });
         await Users.update({ refresh_token: refreshToken }, {
             where: {
