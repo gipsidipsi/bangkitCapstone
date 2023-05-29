@@ -12,6 +12,12 @@ try {
     console.error(error);
 }
 
+app.get('/', (req, res) => {
+    console.log(111111111111111111)
+    res.send('Hello World!')
+})
+
+
 app.use(express.json());
 app.use(router);
 
