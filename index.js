@@ -15,4 +15,4 @@ try {
 app.use(express.json());
 app.use(router);
 
-app.listen(5000, ()=> console.log('Server running at port 5000'));
+app.listen(80, () => console.log('Server Running on Port 80'));
