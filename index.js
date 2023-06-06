@@ -13,7 +13,6 @@ try {
 }
 
 app.get('/', (req, res) => {
-    // console.log(111111111111111111) 
     res.send('Hello World!')
 })
 
